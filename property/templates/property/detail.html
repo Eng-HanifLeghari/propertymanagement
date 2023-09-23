@@ -1,0 +1,775 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+{% load static %}
+	
+<section id="center" class="center_detail clearfix">
+ <div class="container">
+  <div class="row">
+   <div class="center_detail_1 clearfix">
+
+     <div class="col-sm-8">
+	  <div class="center_detail_1l clearfix">
+	   <div class="center_detail_1li clearfix">
+	    <h3 class="mgt">{{ get_data_by_user.title }} <span class="span_1">{{ get_data_by_user.for_rent_or_sale }}</span> <span class="span_2 pull-right">$ {{ get_data_by_user.price }}</span></h3>
+		<h5>{{ get_data_by_user.location }}</h5>
+	   </div>
+	   <div class="center_detail_1li1 clearfix">
+        <h4 class="mgt head_1">Gallery</h4>
+		<div id="main_area">
+                <!-- Slider -->
+                <div class="row">
+                    <div class="col-sm-12" id="slider">
+                        <!-- Top part of the slider -->
+                        <div class="row">
+                            <div class="col-sm-12" id="carousel-bounding-box">
+                                <div class="carousel slide" id="myCarousel">
+                                    <!-- Carousel items -->
+                                    <div class="carousel-inner">
+                                        <div class="active item" data-slide-number="0">
+                                        <img src="{{ get_data_by_user.image.url }}"  class="iw" alt="abc"></div>
+
+                                        <div class="item" data-slide-number="1">
+                                        <img src="{% static 'property/img/42.jpg' %}" class="iw" alt="abc"></div>
+
+                                        <div class="item" data-slide-number="2">
+                                        <img src="{% static 'property/img/43.jpg' %}" class="iw" alt="abc"></div>
+
+                                        <div class="item" data-slide-number="3">
+                                        <img src="{% static 'property/img/44.jpg' %}" class="iw" alt="abc"></div>
+
+                                        <div class="item" data-slide-number="4">
+                                        <img src="{% static 'property/img/45.jpg' %}" class="iw" alt="abc"></div>
+
+                                        <div class="item" data-slide-number="5">
+                                        <img src="{% static 'property/img/46.jpg' %}" class="iw" alt="abc"></div>
+                                    </div><!-- Carousel nav -->
+                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>                                       
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>                                       
+                                    </a>                                
+                                    </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div><!--/Slider-->
+
+                <div class="row hidden-sm" id="slider-thumbs">
+                        <!-- Bottom switcher of slider -->
+                        <ul class="hide-bullets">
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-0"><img src="{% static 'property/img/41.jpg' %}" class="iw" alt="abc"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-1"><img src="{% static 'property/img/42.jpg' %}" class="iw" alt="abc"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-2"><img src="{% static 'property/img/43.jpg' %}" class="iw" alt="abc"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-3"><img src="{% static 'property/img/44.jpg' %}" class="iw" alt="abc"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-4"><img src="{% static 'property/img/45.jpg' %}" class="iw" alt="abc"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-5"><img src="{% static 'property/img/46.jpg' %}" class="iw" alt="abc"></a>
+                            </li>
+                        </ul>                 
+                </div>
+        </div>
+	   </div>
+	   <div class="center_detail_1li1 clearfix">
+        <h4 class="mgt head_1">Description</h4><br><br>
+		   <p>{{ get_data_by_user.description }}</p>
+	   </div>
+	   <div class="center_detail_1li2 clearfix">
+        <h4 class="mgt head_1">Property Details</h4><br><br>
+         <div class="center_detail_1li2i clearfix">
+		  <div class="col-sm-4 space_left">
+		   <h6><span class="bold">Property ID:</span> {{ get_data_by_user.property_ID }}</h6>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h6><span class="bold">Property Type:</span> {{ get_data_by_user.property_Type }}</h6>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h6><span class="bold">Property Status:</span> {{ get_data_by_user.property_Status }}</h6>
+		  </div>
+		 </div>
+		 <div class="center_detail_1li2i clearfix">
+		  <div class="col-sm-4 space_left">
+		   <h6><span class="bold">Property Price:</span> {{ get_data_by_user.price }}</h6>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h6><span class="bold">Rooms:</span> {{ get_data_by_user.rooms }}</h6>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h6><span class="bold">Bedrooms:</span> {{ get_data_by_user.beds }}</h6>
+		  </div>
+		 </div>
+		 <div class="center_detail_1li2i clearfix">
+		  <div class="col-sm-4 space_left">
+		   <h6><span class="bold">Bath:</span> {{ get_data_by_user.bathroom }}</h6>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h6><span class="bold">Garages:</span> {{ get_data_by_user.garage }}</h6>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h6><span class="bold">Year Built:</span> {{ get_data_by_user.year_built }}</h6>
+		  </div>
+		 </div><br><br>
+		 <h4 class="mgt head_1">Amenities</h4><br><br>
+		 <div class="center_detail_1li2i clearfix">
+		  <div class="col-sm-4 space_left">
+		   <h5><i class="fa fa-check-square col_1"></i> Air Cond</h5>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h5><i class="fa fa-check-square col_1"></i> Balcony</h5>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h5><i class="fa fa-check-square col_1"></i> Internet</h5>
+		  </div>
+		 </div>
+		 <div class="center_detail_1li2i clearfix">
+		  <div class="col-sm-4 space_left">
+		   <h5><i class="fa fa-check-square col_1"></i> Dishwasher</h5>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h5><i class="fa fa-check-square col_1"></i> Bedding</h5>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h5><i class="fa fa-check-square col_1"></i> Cable TV</h5>
+		  </div>
+		 </div>
+		 <div class="center_detail_1li2i clearfix">
+		  <div class="col-sm-4 space_left">
+		   <h5><i class="fa fa-check-square col_1"></i> Parking</h5>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h5><i class="fa fa-check-square col_1"></i> Pool</h5>
+		  </div>
+		  <div class="col-sm-4 space_left">
+		   <h5><i class="fa fa-check-square col_1"></i> Fridge</h5>
+		  </div>
+		 </div>
+
+	  </div>
+	   <div class="center_detail_1li3 clearfix">
+	      <h4 class="mgt head_1">What's Nearby</h4><br><br>
+		  <div class="center_detail_1li3i cleafix">
+		   <h5 class="bold col_1"><i class="fa fa-graduation-cap"></i> Education</h5>
+		   <h6><span class="bold">Education Mandarin</span> (15.61 miles) 
+		    <span class="span_1 pull-right col_4">
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			</span>
+		   </h6>
+		   <h6><span class="bold">Marry's Education</span> (15.41 miles) 
+		    <span class="span_1 pull-right col_4">
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star-o"></i>
+			</span>
+		   </h6>
+		   <h6><span class="bold">The Kaplan</span> (15.21 miles) 
+		    <span class="span_1 pull-right col_4">
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star-half-o"></i>
+			</span>
+		   </h6>
+		  </div><br>
+		  <div class="center_detail_1li3i cleafix">
+		   <h5 class="bold col_1"><i class="fa fa-user-md"></i> Health & Medical</h5>
+		   <h6><span class="bold">Education Mandarin</span> (15.61 miles) 
+		    <span class="span_1 pull-right col_4">
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			</span>
+		   </h6>
+		   <h6><span class="bold">Marry's Education</span> (15.41 miles) 
+		    <span class="span_1 pull-right col_4">
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star-o"></i>
+			</span>
+		   </h6>
+		   <h6><span class="bold">The Kaplan</span> (15.21 miles) 
+		    <span class="span_1 pull-right col_4">
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star-half-o"></i>
+			</span>
+		   </h6>
+		  </div><br>
+		  <div class="center_detail_1li3i cleafix">
+		   <h5 class="bold col_1"><i class="fa fa-car"></i> Transportation</h5>
+		   <h6><span class="bold">Education Mandarin</span> (15.61 miles) 
+		    <span class="span_1 pull-right col_4">
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			</span>
+		   </h6>
+		   <h6><span class="bold">Marry's Education</span> (15.41 miles) 
+		    <span class="span_1 pull-right col_4">
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star-o"></i>
+			</span>
+		   </h6>
+		   <h6><span class="bold">The Kaplan</span> (15.21 miles) 
+		    <span class="span_1 pull-right col_4">
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star-half-o"></i>
+			</span>
+		   </h6>
+		  </div>
+	  </div>
+	   <div class="center_detail_1li1 clearfix">
+        <h4 class="mgt head_1">Location</h4><br><br><br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.53925916665!2d-80.29949920266738!3d25.782390733064336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C+FL%2C+USA!5e0!3m2!1sen!2sin!4v1530774403788" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+	   </div>
+	   <div class="center_detail_1li4 clearfix">
+	    <h4 class="mgt head_1">2 Reviews</h4>
+		<div class="center_detail_1li4i clearfix">
+		  <div class="col-sm-2 space_left">
+		   <img src="{% static 'property/img/27.jpg' %}" class="iw img-circle" alt="abc">
+		  </div>
+		  <div class="col-sm-10">
+		   <h5 class="bold mgt col_1">Dolor Sit
+		    <span class="col_4 pull-right">
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			</span>
+			</h5>
+		   <h6>May 30 2020</h6>
+		   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam, quam congue dictum luctus, lacus magna congue ante, in finibus dui sapien eu dolor. Integer tincidunt suscipit erat, nec laoreet ipsum vestibulum sed.</p>
+		  </div>
+		</div>
+		<div class="center_detail_1li4i border_none pdb clearfix">
+		  <div class="col-sm-2 space_left">
+		   <img src="{% static 'property/img/28.jpg' %}" class="iw img-circle" alt="abc">
+		  </div>
+		  <div class="col-sm-10">
+		   <h5 class="bold mgt col_1">Semper Porta
+		    <span class="col_4 pull-right">
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star"></i>
+			 <i class="fa fa-star-o"></i>
+			</span>
+			</h5>
+		   <h6>May 30 2020</h6>
+		   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam, quam congue dictum luctus, lacus magna congue ante, in finibus dui sapien eu dolor. Integer tincidunt suscipit erat, nec laoreet ipsum vestibulum sed.</p>
+		  </div>
+		</div>
+	   </div>
+	   <div class="center_detail_1li5 clearfix">
+	     <h4 class="mgt head_1">Add Review</h4><br><br>
+		 <div class="center_detail_1li5i clearfix">
+		   <div class="col-sm-8 space_left">
+		    <p class="mgt">Your rating for this listing<br> 
+			<span class="col_4">
+			  <i class="fa fa-star-o"></i>
+			  <i class="fa fa-star-o"></i>
+			  <i class="fa fa-star-o"></i>
+			  <i class="fa fa-star-o"></i>
+			  <i class="fa fa-star-o"></i>
+			</span>
+			</p>
+		   </div>
+		   <div class="col-sm-4">
+		     <h5 class="mgt text-right"><a class="button mgt" href="#">Upload Photos</a></h5>
+		   </div>
+		 </div><br>
+		   <input class="form-control" placeholder="First Name" type="text">
+		   <input class="form-control" placeholder="Last Name" type="text">
+		   <input class="form-control" placeholder="Email" type="text">
+		   <textarea placeholder="Review" class="form-control form_1"></textarea>
+		   <h5><a class="button" href="#">Submit Review</a></h5>
+	   </div>
+	 </div>
+   </div>
+     <div class="col-sm-4">
+	   <div class="center_detail_1r clearfix">
+	    <div class="center_detail_1ri1 mgt clearfix">
+		 <h4 class="mgt"><i class="fa fa-calendar col_1"></i> Schedule a Tour</h4>
+		 <hr>
+		 <div class="center_detail_1ri1i clearfix">
+		  <div class="col-sm-6 space_left">
+		   <input id="cal_3" placeholder="10/16/2020" class="form-control" type="text">
+		  </div>
+		  <div class="col-sm-6 space_left">
+		   <input placeholder="12:13 am" class="form-control" type="text">
+		  </div>
+		 </div>
+		 <div class="center_detail_1ri1i1 clearfix">
+		  <div class="col-sm-6 space_left">
+		   <h5>Adult</h5>
+		   <div class="input-group number-spinner">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+				</span>
+				<input type="text" class="form-control mgt text-center" value="1">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+				</span>
+	       </div>
+		  </div>
+		  <div class="col-sm-6 space_left">
+		   <h5>Children</h5>
+		   <div class="input-group number-spinner">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+				</span>
+				<input type="text" class="form-control mgt text-center" value="1">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+				</span>
+	       </div>
+		  </div>
+		 </div><br>
+		 <h5 class="text-center mgt"><a class="button block" href="#">Submit Request</a></h5>
+		</div>
+		<div class="center_detail_1ri1 clearfix">
+		  <h4 class="mgt"> Agent Information</h4>
+		  <hr>
+		  <div class="center_detail_1ri1i1 clearfix">
+		    <img src="{% static 'property/img/30.jpg' %}" class="img-circle" alt="abc">
+			<h5 class="bold mgt">Semper Porta</h5>
+			<h6>Agent of Property</h6>
+		  </div>
+		  <h6><i class="fa fa-map-marker col_1"></i> 302 Av Park, New York</h6>
+		  <h6><i class="fa fa-phone col_1"></i> (234) 0200 17813</h6>
+		  <h6><i class="fa fa-envelope col_1"></i> <a href="#">info@gmail.com</a></h6><br>
+		  <h4> Request Inquiry</h4>
+		  <hr>
+		  <input placeholder="Full Name" class="form-control form_1" type="text">
+		  <input placeholder="Phone Number" class="form-control form_1" type="text">
+		  <input placeholder="Email Address" class="form-control form_1" type="text">
+		  <textarea placeholder="Message" class="form-control form_2"></textarea>
+		  <h5 class="text-center"><a class="button block" href="#">Submit Request</a></h5>
+		</div>
+		<div class="center_list_1r1 clearfix">
+	    <h4 class="mgt">Recent Properties</h4>
+		<hr>
+		<div class="center_list_1r1i clearfix">
+		 <a href="#"><img src="{% static 'property/img/38.jpg' %}" alt="abc"></a>
+		 <h5 class="bold mgt"><a href="#">Family Home</a></h5>
+		 <h6>$260,000</h6>
+		</div>
+		<div class="center_list_1r1i clearfix">
+		 <a href="#"><img src="{% static 'property/img/39.jpg' %}" alt="abc"></a>
+		 <h5 class="bold mgt"><a href="#">Family Home</a></h5>
+		 <h6>$180,000</h6>
+		</div>
+		<div class="center_list_1r1i clearfix">
+		 <a href="#"><img src="{% static 'property/img/40.jpg' %}" alt="abc"></a>
+		 <h5 class="bold mgt"><a href="#">Family Home</a></h5>
+		 <h6>$240,000</h6>
+		</div>
+	  </div>
+	    <div class="center_detail_1ri2 clearfix">
+		  <h4 class="mgt"> Feature Properties</h4>
+		  <hr>
+		  <div class="feature_2 clearfix">
+    <div id="carousel-example" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+					<div class="col-sm-12 space_all">
+					 <div class="feature_2im clearfix">
+					   	    <div class="feature_2im1 clearfix">
+					     <a href="#"><img src="{% static 'property/img/4.jpg' %}" class="iw" alt="abc"></a>
+					    </div>
+							<div class="feature_2im2 clearfix">
+							 <h6 class="mgt"><a class="bg_1" href="#">Featured</a></h6>
+							 <h6 class="pull-right mgt"><a class="bg_2" href="#">For Rent</a></h6>
+							</div>
+							<div class="feature_2im4 clearfix">
+							 <div class="col-sm-6 space_left">
+							   <h6><a class="bg_3" href="#">Family Home</a></h6>
+							 </div>
+							 <div class="col-sm-6 feature_2im4r space_right">
+							   <ul class="mgt">
+								<li><a href="#"><i class="fa fa-link"></i></a></li>
+								<li><a href="#"><i class="fa fa-video-camera"></i></a></li>
+								<li><a href="#"><i class="fa fa-photo"></i></a></li>
+							   </ul>
+							 </div>
+							</div>
+					 </div>
+					 <div class="feature_2m_last clearfix">
+					  <h4 class="mgt bold"><a href="#">Lorem House Luxury Villa</a></h4>
+					  <p><i class="fa fa-map-marker"></i> Fst Su, 67 - Central Park North, OZD</p><br>
+					  <h6><i class="fa fa-hotel col_1"></i> 4 Bedrooms <span class="pull-right"><i class="fa fa-building-o col_1"></i> 3 Bathrooms</span></h6>
+					  <h6><i class="fa fa-object-group col_1"></i> 620 sq ft <span class="pull-right"><i class="fa fa-gear col_1"></i> 2 Garages</span></h6><br>
+					  <h5 class="bold"><a href="#">$ 130,000 <span class="pull-right"><i class="fa fa-exchange"></i> <i class="fa fa-share-alt"></i> <i class="fa fa-heart-o"></i></span></a></h5>
+					  <div class="feature_2m_last_i clearfix">
+					    <h6><a href="#"><i class="fa fa-user"></i> Eget Nulla <span class="pull-right"><i class="fa fa-calendar"></i> 3 months ago</span></a></h6>
+					  </div>
+					 </div>
+					</div>
+                </div>
+                <div class="item">
+                    <div class="col-sm-12 space_all">
+					 <div class="feature_2im clearfix">
+					   	    <div class="feature_2im1 clearfix">
+					     <a href="#"><img src="{% static 'property/img/7.jpg' %}" class="iw" alt="abc"></a>
+					    </div>
+							<div class="feature_2im2 clearfix">
+							 <h6 class="mgt"><a class="bg_1" href="#">Featured</a></h6>
+							 <h6 class="pull-right mgt"><a class="bg_2" href="#">For Rent</a></h6>
+							</div>
+							<div class="feature_2im4 clearfix">
+							 <div class="col-sm-6 space_left">
+							   <h6><a class="bg_3" href="#">Family Home</a></h6>
+							 </div>
+							 <div class="col-sm-6 feature_2im4r space_right">
+							   <ul class="mgt">
+								<li><a href="#"><i class="fa fa-link"></i></a></li>
+								<li><a href="#"><i class="fa fa-video-camera"></i></a></li>
+								<li><a href="#"><i class="fa fa-photo"></i></a></li>
+							   </ul>
+							 </div>
+							</div>
+					 </div>
+					 <div class="feature_2m_last clearfix">
+					  <h4 class="mgt bold"><a href="#">Lorem House Luxury Villa</a></h4>
+					  <p><i class="fa fa-map-marker"></i> Fst Su, 67 - Central Park North, OZD</p><br>
+					  <h6><i class="fa fa-hotel col_1"></i> 4 Bedrooms <span class="pull-right"><i class="fa fa-building-o col_1"></i> 3 Bathrooms</span></h6>
+					  <h6><i class="fa fa-object-group col_1"></i> 620 sq ft <span class="pull-right"><i class="fa fa-gear col_1"></i> 2 Garages</span></h6><br>
+					  <h5 class="bold"><a href="#">$ 130,000 <span class="pull-right"><i class="fa fa-exchange"></i> <i class="fa fa-share-alt"></i> <i class="fa fa-heart-o"></i></span></a></h5>
+					  <div class="feature_2m_last_i clearfix">
+					    <h6><a href="#"><i class="fa fa-user"></i> Eget Nulla <span class="pull-right"><i class="fa fa-calendar"></i> 3 months ago</span></a></h6>
+					  </div>
+					 </div>
+					</div>
+                </div>
+            </div>
+        </div>
+	<div class="feature_2_last text-center clearfix">
+            <div class="col-sm-12">
+                <!-- Controls -->
+                <div class="controls">
+                    <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example" data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example" data-slide="next"></a>
+                </div>
+            </div>
+        </div>
+
+   </div>
+		</div>
+		<div class="center_list_1r1 clearfix">
+	    <h4 class="mgt">Popular Tags</h4>
+		<hr>
+        <ul>
+		 <li><a href="#">House</a></li>
+		 <li><a href="#">Real Home</a></li>
+		 <li><a href="#">Baths</a></li>
+		 <li><a href="#">Beds</a></li>
+		 <li><a href="#">Garages</a></li>
+		 <li><a href="#">Family</a></li>
+		 <li><a href="#">Real Estates</a></li>
+		 <li><a href="#">Properties</a></li>
+		 <li><a href="#">Location</a></li>
+		 <li><a href="#">Price</a></li>
+		</ul>
+	  </div>
+	   </div> 
+	 </div>
+  </div><br>
+   <div class="feature_1 clearfix">
+    <div class="col-sm-12">
+	   <h4>SIMILAR <br><span class="col_1">PROPERTIES</span></h4>
+	</div>
+   </div>
+   <div class="feature_2 clearfix">
+    <div class="col-sm-4">
+					 <div class="feature_2im clearfix">
+					   	    <div class="feature_2im1 clearfix">
+					     <a href="#"><img src="{% static 'property/img/4.jpg' %}" class="iw" alt="abc"></a>
+					    </div>
+							<div class="feature_2im2 clearfix">
+							 <h6 class="mgt"><a class="bg_1" href="#">Featured</a></h6>
+							 <h6 class="pull-right mgt"><a class="bg_2" href="#">For Rent</a></h6>
+							</div>
+							<div class="feature_2im4 clearfix">
+							 <div class="col-sm-6 space_left">
+							   <h6><a class="bg_3" href="#">Family Home</a></h6>
+							 </div>
+							 <div class="col-sm-6 feature_2im4r space_right">
+							   <ul class="mgt">
+								<li><a href="#"><i class="fa fa-link"></i></a></li>
+								<li><a href="#"><i class="fa fa-video-camera"></i></a></li>
+								<li><a href="#"><i class="fa fa-photo"></i></a></li>
+							   </ul>
+							 </div>
+							</div>
+					 </div>
+					 <div class="feature_2m_last clearfix">
+					  <h4 class="mgt bold"><a href="#">Lorem House Luxury Villa</a></h4>
+					  <p><i class="fa fa-map-marker"></i> Fst Su, 67 - Central Park North, OZD</p><br>
+					  <h6><i class="fa fa-hotel col_1"></i> 4 Bedrooms <span class="pull-right"><i class="fa fa-building-o col_1"></i> 3 Bathrooms</span></h6>
+					  <h6><i class="fa fa-object-group col_1"></i> 620 sq ft <span class="pull-right"><i class="fa fa-gear col_1"></i> 2 Garages</span></h6><br>
+					  <h5 class="bold"><a href="#">$ 130,000 <span class="pull-right"><i class="fa fa-exchange"></i> <i class="fa fa-share-alt"></i> <i class="fa fa-heart-o"></i></span></a></h5>
+					  <div class="feature_2m_last_i clearfix">
+					    <h6><a href="#"><i class="fa fa-user"></i> Eget Nulla <span class="pull-right"><i class="fa fa-calendar"></i> 3 months ago</span></a></h6>
+					  </div>
+					 </div>
+					</div>
+	<div class="col-sm-4">
+					 <div class="feature_2im clearfix">
+					   	    <div class="feature_2im1 clearfix">
+					     <a href="#"><img src="{% static 'property/img/5.jpg' %}" class="iw" alt="abc"></a>
+					    </div>
+							<div class="feature_2im2 clearfix">
+							 <h6 class="mgt"><a class="bg_1" href="#">Featured</a></h6>
+							 <h6 class="pull-right mgt"><a class="bg_4" href="#">For Sale</a></h6>
+							</div>
+							<div class="feature_2im4 clearfix">
+							 <div class="col-sm-6 space_left">
+							   <h6><a class="bg_3" href="#">Family Home</a></h6>
+							 </div>
+							 <div class="col-sm-6 feature_2im4r space_right">
+							   <ul class="mgt">
+								<li><a href="#"><i class="fa fa-link"></i></a></li>
+								<li><a href="#"><i class="fa fa-video-camera"></i></a></li>
+								<li><a href="#"><i class="fa fa-photo"></i></a></li>
+							   </ul>
+							 </div>
+							</div>
+					 </div>
+					 <div class="feature_2m_last clearfix">
+					  <h4 class="mgt bold"><a href="#">Lorem House Luxury Villa</a></h4>
+					  <p><i class="fa fa-map-marker"></i> Fst Su, 67 - Central Park North, OZD</p><br>
+					  <h6><i class="fa fa-hotel col_1"></i> 4 Bedrooms <span class="pull-right"><i class="fa fa-building-o col_1"></i> 3 Bathrooms</span></h6>
+					  <h6><i class="fa fa-object-group col_1"></i> 620 sq ft <span class="pull-right"><i class="fa fa-gear col_1"></i> 2 Garages</span></h6><br>
+					  <h5 class="bold"><a href="#">$ 130,000 <span class="pull-right"><i class="fa fa-exchange"></i> <i class="fa fa-share-alt"></i> <i class="fa fa-heart-o"></i></span></a></h5>
+					  <div class="feature_2m_last_i clearfix">
+					    <h6><a href="#"><i class="fa fa-user"></i> Eget Nulla <span class="pull-right"><i class="fa fa-calendar"></i> 3 months ago</span></a></h6>
+					  </div>
+					 </div>
+					</div>
+	<div class="col-sm-4">
+					 <div class="feature_2im clearfix">
+					   	    <div class="feature_2im1 clearfix">
+					     <a href="#"><img src="{% static 'property/img/6.jpg' %}" class="iw" alt="abc"></a>
+					    </div>
+							<div class="feature_2im2 clearfix">
+							 <h6 class="mgt"><a class="bg_1" href="#">Featured</a></h6>
+							 <h6 class="pull-right mgt"><a class="bg_2" href="#">For Rent</a></h6>
+							</div>
+							<div class="feature_2im4 clearfix">
+							 <div class="col-sm-6 space_left">
+							   <h6><a class="bg_3" href="#">Family Home</a></h6>
+							 </div>
+							 <div class="col-sm-6 feature_2im4r space_right">
+							   <ul class="mgt">
+								<li><a href="#"><i class="fa fa-link"></i></a></li>
+								<li><a href="#"><i class="fa fa-video-camera"></i></a></li>
+								<li><a href="#"><i class="fa fa-photo"></i></a></li>
+							   </ul>
+							 </div>
+							</div>
+					 </div>
+					 <div class="feature_2m_last clearfix">
+					  <h4 class="mgt bold"><a href="#">Lorem House Luxury Villa</a></h4>
+					  <p><i class="fa fa-map-marker"></i> Fst Su, 67 - Central Park North, OZD</p><br>
+					  <h6><i class="fa fa-hotel col_1"></i> 4 Bedrooms <span class="pull-right"><i class="fa fa-building-o col_1"></i> 3 Bathrooms</span></h6>
+					  <h6><i class="fa fa-object-group col_1"></i> 620 sq ft <span class="pull-right"><i class="fa fa-gear col_1"></i> 2 Garages</span></h6><br>
+					  <h5 class="bold"><a href="#">$ 130,000 <span class="pull-right"><i class="fa fa-exchange"></i> <i class="fa fa-share-alt"></i> <i class="fa fa-heart-o"></i></span></a></h5>
+					  <div class="feature_2m_last_i clearfix">
+					    <h6><a href="#"><i class="fa fa-user"></i> Eget Nulla <span class="pull-right"><i class="fa fa-calendar"></i> 3 months ago</span></a></h6>
+					  </div>
+					 </div>
+					</div>
+   </div>
+ </div>
+ </div>
+</section>
+
+<!--<section id="footer">-->
+<!-- <div class="container">-->
+<!--  <div class="row">-->
+<!--   <div class="footer_1 clearfix">-->
+<!--     <div class="col-sm-3">-->
+<!--	  <div class="footer_1i clearfix">-->
+<!--	    <a class="navbar-brand" href="index.html"> <i class="fa fa-home"></i> <span> Prop Find</span> </a>-->
+<!--		<p class="col">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>-->
+<!--		<h6 class="col_3"><i class="fa fa-map-marker col"></i> 65 North Park Avenue, USA</h6>-->
+<!--		<h6 class="col_3"><i class="fa fa-phone col"></i> +91 123 456 7890</h6>-->
+<!--		<h6 class="col_3"><i class="fa fa-envelope col"></i> info@gmail.com</h6>-->
+<!--	  </div>-->
+<!--	 </div>-->
+<!--	 <div class="col-sm-3">-->
+<!--	  <div class="footer_1i1 clearfix">-->
+<!--	    <h4 class="col">Navigation</h4>-->
+<!--		<h6><a class="col_3" href="#">Home One</a> <span class="pull-right"><a class="col_3" href="#">Agents Details</a></span></h6>-->
+<!--		<h6><a class="col_3" href="#">Properties Right</a> <span class="pull-right"><a class="col_3" href="#">About Us</a></span></h6>-->
+<!--		<h6><a class="col_3" href="#">Properties List</a> <span class="pull-right"><a class="col_3" href="#">Blog Default</a></span></h6>-->
+<!--		<h6><a class="col_3" href="#">Properties Details</a> <span class="pull-right"><a class="col_3" href="#">Blog Details</a></span></h6>-->
+<!--		<h6><a class="col_3" href="#">Agents Listing</a> <span class="pull-right"><a class="col_3" href="#">Contact Us</a></span></h6>-->
+<!--	  </div>-->
+<!--	 </div>-->
+<!--	 <div class="col-sm-3">-->
+<!--	  <div class="footer_1i2 clearfix">-->
+<!--        <h4 class="col">Twitter Feeds</h4>-->
+<!--		<div class="footer_1i2i clearfix">-->
+<!--		 <div class="col-sm-1 space_all">-->
+<!--		  <span><i class="fa fa-twitter col"></i></span>-->
+<!--		 </div>-->
+<!--		 <div class="col-sm-11">-->
+<!--		  <p class="mgt col_3"><a class="col" href="#">@Prop Find</a> All Share Them With Me Baby Said Inspet.<br>-->
+<!--<span class="bold col_2">about 7 days ago</span></p>-->
+<!--		 </div>-->
+<!--		</div>-->
+<!--		<div class="footer_1i2i clearfix">-->
+<!--		 <div class="col-sm-1 space_all">-->
+<!--		  <span><i class="fa fa-twitter col"></i></span>-->
+<!--		 </div>-->
+<!--		 <div class="col-sm-11">-->
+<!--		  <p class="mgt col_3"><a class="col" href="#">@Prop Find</a> All Share Them With Me Baby Said Inspet.<br>-->
+<!--<span class="bold col_2">about 7 days ago</span></p>-->
+<!--		 </div>-->
+<!--		</div>-->
+<!--		<div class="footer_1i2i clearfix">-->
+<!--		 <div class="col-sm-1 space_all">-->
+<!--		  <span><i class="fa fa-twitter col"></i></span>-->
+<!--		 </div>-->
+<!--		 <div class="col-sm-11">-->
+<!--		  <p class="mgt col_3"><a class="col" href="#">@Prop Find</a> All Share Them With Me Baby Said Inspet.<br>-->
+<!--<span class="bold col_2">about 7 days ago</span></p>-->
+<!--		 </div>-->
+<!--		</div>-->
+<!--	  </div>-->
+<!--	  </div>-->
+<!--	  <div class="col-sm-3">-->
+<!--	  <div class="footer_1i3 clearfix">-->
+<!--        <h4 class="col">Newsletters</h4>-->
+<!--        <p class="col_3">Sign Up for Our Newsletter to get Latest Updates and Offers. Subscribe to receive news in your inbox.</p>-->
+<!--		<input class="form-control" placeholder="Enter Your Email" type="text">-->
+<!--		<h5 class="text-center"><a class="button block" href="#">SUBSCRIBE</a></h5>-->
+<!--	  </div>-->
+<!--	  </div>-->
+<!--	 </div>-->
+<!--   <div class="footer_2 clearfix">-->
+<!--    <div class="col-sm-8">-->
+<!--	 <div class="footer_2l clearfix">-->
+<!--	  <p class="col_3">© 2013 Your Website Name. All Rights Reserved | Design by <a class="col" href="http://www.templateonweb.com">TemplateOnWeb</a></p>-->
+<!--	 </div>-->
+<!--	</div>-->
+<!--	<div class="col-sm-4">-->
+<!--	 <div class="footer_2r text-right clearfix">-->
+<!--	   <ul class="social-network social-circle mgt">-->
+<!--                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>-->
+<!--                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>-->
+<!--                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>-->
+<!--                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>-->
+<!--                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>-->
+<!--                    </ul>-->
+<!--	 </div>-->
+<!--	</div>-->
+<!--   </div>-->
+<!--   </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<script>-->
+<!--$(document).ready(function(){-->
+
+<!--/*****Fixed Menu******/-->
+<!--var secondaryNav = $('.cd-secondary-nav'),-->
+<!--   secondaryNavTopPosition = secondaryNav.offset().top;-->
+<!--	$(window).on('scroll', function(){-->
+<!--		if($(window).scrollTop() > secondaryNavTopPosition ) {-->
+<!--			secondaryNav.addClass('is-fixed');	-->
+<!--		} else {-->
+<!--			secondaryNav.removeClass('is-fixed');-->
+<!--		}-->
+<!--	});	-->
+<!--	-->
+<!--});-->
+<!--</script>-->
+
+<!--<script type="text/javascript">-->
+<!--	  jQuery(document).ready(function($) {-->
+<!-- -->
+<!--        $('#myCarousel').carousel({-->
+<!--                interval: 5000-->
+<!--        });-->
+<!-- -->
+<!--        $('#carousel-text').html($('#slide-content-0').html());-->
+<!-- -->
+<!--        //Handles the carousel thumbnails-->
+<!--       $('[id^=carousel-selector-]').click( function(){-->
+<!--            var id = this.id.substr(this.id.lastIndexOf("-") + 1);-->
+<!--            var id = parseInt(id);-->
+<!--            $('#myCarousel').carousel(id);-->
+<!--        });-->
+<!-- -->
+<!-- -->
+<!--        // When the carousel slides, auto update the text-->
+<!--        $('#myCarousel').on('slid.bs.carousel', function (e) {-->
+<!--                 var id = $('.item.active').data('slide-number');-->
+<!--                $('#carousel-text').html($('#slide-content-'+id).html());-->
+<!--        });-->
+<!--});-->
+<!--	</script>-->
+<!--	-->
+<!--<script type="text/javascript">-->
+<!--	$(document).on('click', '.number-spinner button', function () {    -->
+<!--	var btn = $(this),-->
+<!--		oldValue = btn.closest('.number-spinner').find('input').val().trim(),-->
+<!--		newVal = 0;-->
+<!--	-->
+<!--	if (btn.attr('data-dir') == 'up') {-->
+<!--		newVal = parseInt(oldValue) + 1;-->
+<!--	} else {-->
+<!--		if (oldValue > 1) {-->
+<!--			newVal = parseInt(oldValue) - 1;-->
+<!--		} else {-->
+<!--			newVal = 1;-->
+<!--		}-->
+<!--	}-->
+<!--	btn.closest('.number-spinner').find('input').val(newVal);-->
+<!--});-->
+<!--	</script>-->
+</body>
+ 
+</html>
+{% endblock content %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block stylesheets %}{% endblock stylesheets %}
+</head>
+<body data-background-color="dark">
+	<div class="wrapper">
+
+        {% include 'includes/header.html' %}
+
+
+		<div class="main-panel">
+
+			{% block content %}{% endblock content %}
+		</div>
+
+			{% include 'includes/footer.html' %}
+
+
+
+
+	</div>
+
+
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}{% endblock javascripts %}
+</body>
+</html>
