@@ -1,11 +1,15 @@
 from django.shortcuts import render
-from .models import Property
+from .models import Property, PropertyImage, Slider
 
 
 def home(request):
+    slider = Slider.objects.all()
     queryset = Property.objects.all()
+    propertyimage = PropertyImage.objects.all()
     context = {
-        'queryset': queryset
+        'queryset': queryset,
+        'slider': slider,
+        'propertyimage': propertyimage
     }
     return render(request, 'property/index.html', context)
 
