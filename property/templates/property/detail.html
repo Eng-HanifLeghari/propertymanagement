@@ -27,23 +27,11 @@
                                 <div class="carousel slide" id="myCarousel">
                                     <!-- Carousel items -->
                                     <div class="carousel-inner">
-                                        <div class="active item" data-slide-number="0">
-                                        <img src="{{ get_data_by_user.image.url }}"  class="iw" alt="abc"></div>
+										{% for image in get_data_by_user.property_image.all %}
+                                        <div {% if forloop.first %} class="active item" {% else %}class="item" {%endif%} data-slide-number=	{{ forloop.counter0 }}>
+                                        <img src="{{ image.image.url }}"  class="iw" alt="abc"></div>
+										{% endfor %}
 
-                                        <div class="item" data-slide-number="1">
-                                        <img src="{% static 'property/img/42.jpg' %}" class="iw" alt="abc"></div>
-
-                                        <div class="item" data-slide-number="2">
-                                        <img src="{% static 'property/img/43.jpg' %}" class="iw" alt="abc"></div>
-
-                                        <div class="item" data-slide-number="3">
-                                        <img src="{% static 'property/img/44.jpg' %}" class="iw" alt="abc"></div>
-
-                                        <div class="item" data-slide-number="4">
-                                        <img src="{% static 'property/img/45.jpg' %}" class="iw" alt="abc"></div>
-
-                                        <div class="item" data-slide-number="5">
-                                        <img src="{% static 'property/img/46.jpg' %}" class="iw" alt="abc"></div>
                                     </div><!-- Carousel nav -->
                                     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                                         <span class="glyphicon glyphicon-chevron-left"></span>                                       
@@ -61,29 +49,11 @@
                 <div class="row hidden-sm" id="slider-thumbs">
                         <!-- Bottom switcher of slider -->
                         <ul class="hide-bullets">
+							{% for image in get_data_by_user.property_image.all %}
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-0"><img src="{% static 'property/img/41.jpg' %}" class="iw" alt="abc"></a>
+                                <a class="thumbnail" id="carousel-selector-"{{ forloop.counter0 }}><img src="{{ image.image.url }}" class="iw" alt="abc"></a>
                             </li>
-
-                            <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-1"><img src="{% static 'property/img/42.jpg' %}" class="iw" alt="abc"></a>
-                            </li>
-
-                            <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-2"><img src="{% static 'property/img/43.jpg' %}" class="iw" alt="abc"></a>
-                            </li>
-
-                            <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-3"><img src="{% static 'property/img/44.jpg' %}" class="iw" alt="abc"></a>
-                            </li>
-
-                            <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-4"><img src="{% static 'property/img/45.jpg' %}" class="iw" alt="abc"></a>
-                            </li>
-
-                            <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-5"><img src="{% static 'property/img/46.jpg' %}" class="iw" alt="abc"></a>
-                            </li>
+							{%endfor%}
                         </ul>                 
                 </div>
         </div>
