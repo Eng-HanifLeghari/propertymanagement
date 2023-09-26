@@ -100,45 +100,66 @@
 
 	   <div class="center_detail_1li1 clearfix">
         <h4 class="mgt head_1">Location</h4><br><br><br>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.53925916665!2d-80.29949920266738!3d25.782390733064336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C+FL%2C+USA!5e0!3m2!1sen!2sin!4v1530774403788" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+        <iframe src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+    <script>
+
+        // Initialize and add the map
+        function initMap() {
+
+            // The location of Geeksforgeeks office
+            const gfg_office = {
+                lat: 28.50231,
+                lng: 77.40548
+            };
+
+            // Create the map, centered at gfg_office
+            const map = new google.maps.Map(
+                    document.getElementById("map"), {
+
+                // Set the zoom of the map
+                zoom: 17.56,
+                center: gfg_office,
+            });
+        }
+    </script>
 	   </div><br><br>
 		   <h4 class="mgt head_1">Amenities</h4><br><br>
 		 <div class="center_detail_1li2i clearfix">
 		  <div class="col-sm-4 space_left">
-		   <h5><i class="fa fa-check-square col_1"></i> Air Cond</h5>
+		   <h5><i class="fa fa-check-square col_1"></i> Air Cond{{amenities.air_cond}}</h5>
 		  </div>
 		  <div class="col-sm-4 space_left">
-		   <h5><i class="fa fa-check-square col_1"></i> Balcony</h5>
+		   <h5><i class="fa fa-check-square col_1"></i> Balcony {{amenities.balcony}}</h5>
 		  </div>
 		  <div class="col-sm-4 space_left">
-		   <h5><i class="fa fa-check-square col_1"></i> Internet</h5>
+		   <h5><i class="fa fa-check-square col_1"></i> Internet {{amenities.internet}}</h5>
 		  </div>
 		 </div>
 		 <div class="center_detail_1li2i clearfix">
 		  <div class="col-sm-4 space_left">
-		   <h5><i class="fa fa-check-square col_1"></i> Dishwasher</h5>
+		   <h5><i class="fa fa-check-square col_1"></i> Dishwasher {{amenities.dishwasher}}</h5>
 		  </div>
 		  <div class="col-sm-4 space_left">
-		   <h5><i class="fa fa-check-square col_1"></i> Bedding</h5>
+		   <h5><i class="fa fa-check-square col_1"></i> Bedding {{amenities.bedding}}</h5>
 		  </div>
 		  <div class="col-sm-4 space_left">
-		   <h5><i class="fa fa-check-square col_1"></i> Cable TV</h5>
+		   <h5><i class="fa fa-check-square col_1"></i> Cable TV {{amenities.cable_tv}}</h5>
 		  </div>
 		 </div>
 		 <div class="center_detail_1li2i clearfix">
 		  <div class="col-sm-4 space_left">
-		   <h5><i class="fa fa-check-square col_1"></i> Parking</h5>
+		   <h5><i class="fa fa-check-square col_1"></i> Parking {{amenities.parking}}</h5>
 		  </div>
 		  <div class="col-sm-4 space_left">
-		   <h5><i class="fa fa-check-square col_1"></i> Pool</h5>
+		   <h5><i class="fa fa-check-square col_1"></i> Pool {{amenities.pool}}</h5>
 		  </div>
 		  <div class="col-sm-4 space_left">
-		   <h5><i class="fa fa-check-square col_1"></i> Fridge</h5>
+		   <h5><i class="fa fa-check-square col_1"></i> Fridge {{amenities.fridge}}</h5>
 		  </div>
 		 </div>
-	   </div>
-
-		   <div class="col-sm-4">
+	   </div><br><br>
+    <div class="sidebar">
+	<div class="col-sm-4">
 	   <div class="center_detail_1r clearfix">
 	    <div class="center_detail_1ri1 mgt clearfix">
 		 <h4 class="mgt"><i class="fa fa-calendar col_1"></i> Schedule a Tour</h4>
@@ -183,7 +204,7 @@
 		  <h4 class="mgt"> Agent Information</h4>
 		  <hr>
 		  <div class="center_detail_1ri1i1 clearfix">
-		    <img src="{% static 'property/img/30.jpg' %}" class="img-circle" alt="abc">
+		    <img src="img/30.jpg" class="img-circle" alt="abc">
 			<h5 class="bold mgt">Semper Porta</h5>
 			<h6>Agent of Property</h6>
 		  </div>
@@ -202,17 +223,17 @@
 	    <h4 class="mgt">Recent Properties</h4>
 		<hr>
 		<div class="center_list_1r1i clearfix">
-		 <a href="#"><img src="{% static 'property/img/38.jpg' %}" alt="abc"></a>
+		 <a href="#"><img src="img/38.jpg" alt="abc"></a>
 		 <h5 class="bold mgt"><a href="#">Family Home</a></h5>
 		 <h6>$260,000</h6>
 		</div>
 		<div class="center_list_1r1i clearfix">
-		 <a href="#"><img src="{% static 'property/img/39.jpg' %}" alt="abc"></a>
+		 <a href="#"><img src="img/39.jpg" alt="abc"></a>
 		 <h5 class="bold mgt"><a href="#">Family Home</a></h5>
 		 <h6>$180,000</h6>
 		</div>
 		<div class="center_list_1r1i clearfix">
-		 <a href="#"><img src="{% static 'property/img/40.jpg' %}" alt="abc"></a>
+		 <a href="#"><img src="img/40.jpg" alt="abc"></a>
 		 <h5 class="bold mgt"><a href="#">Family Home</a></h5>
 		 <h6>$240,000</h6>
 		</div>
@@ -228,7 +249,7 @@
 					<div class="col-sm-12 space_all">
 					 <div class="feature_2im clearfix">
 					   	    <div class="feature_2im1 clearfix">
-					     <a href="#"><img src="{% static 'property/img/4.jpg' %}" class="iw" alt="abc"></a>
+					     <a href="#"><img src="img/4.jpg" class="iw" alt="abc"></a>
 					    </div>
 							<div class="feature_2im2 clearfix">
 							 <h6 class="mgt"><a class="bg_1" href="#">Featured</a></h6>
@@ -263,7 +284,7 @@
                     <div class="col-sm-12 space_all">
 					 <div class="feature_2im clearfix">
 					   	    <div class="feature_2im1 clearfix">
-					     <a href="#"><img src="{% static 'property/img/7.jpg' %}" class="iw" alt="abc"></a>
+					     <a href="#"><img src="img/7.jpg" class="iw" alt="abc"></a>
 					    </div>
 							<div class="feature_2im2 clearfix">
 							 <h6 class="mgt"><a class="bg_1" href="#">Featured</a></h6>
@@ -306,7 +327,7 @@
         </div>
 
    </div>
-		</div>
+		</div><br>
 		<div class="center_list_1r1 clearfix">
 	    <h4 class="mgt">Popular Tags</h4>
 		<hr>
@@ -322,12 +343,13 @@
 		 <li><a href="#">Location</a></li>
 		 <li><a href="#">Price</a></li>
 		</ul>
-	  </div>
-	   </div> 
+	  </div><br><br>
+	   </div>
 	 </div>
-  </div><br>
+  </div>
+	  </div>
+	 </div></div></div></div>
 </section>
-
 <!--<section id="footer">-->
 <!-- <div class="container">-->
 <!--  <div class="row">-->
@@ -473,8 +495,11 @@
 <!--	}-->
 <!--	btn.closest('.number-spinner').find('input').val(newVal);-->
 <!--});-->
-<!--	</script>-->
-</body>
- 
-</html>
+<!--&lt;!&ndash;	</script>&ndash;&gt;-->
+<!--</body>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!---->
+<!--</html>-->
 {% endblock content %}
