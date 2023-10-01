@@ -1,0 +1,71 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Login {% endblock title %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<html>
+<head>
+<style>
+  /* Center the form horizontally and vertically */
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* 100% of the viewport height */
+  }
+
+  /* Style for the form */
+  .my-form {
+    background: DodgerBlue;
+    padding: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+</style>
+</head>
+<body>
+<div class="center">
+    {% if message %}
+      <div class="text-center">
+        <h5 class="{{ message.color }}-text no-margin">{{ message.text }}</h5>
+      </div>
+    {% endif %}
+  <form class="my-form" method="POST" action="">
+      {% csrf_token %}
+          {% if messages %}
+        <div class="alert alert-info">
+                <ul class="messages">
+                    {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+        </div>
+      {% endif %}
+      <h3 class="blue-text bold">Login</h3><br><br><br>
+    <!-- Your form fields go here -->
+    <div class="form-group">
+        <label for="username">User Name:</label>
+        <input type="text" placeholder="username" class="form-control validate" id="username" name="username" required>
+      </div>
+
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" placeholder="password" class="form-control validate" id="password" name="password" required>
+      </div>
+   <div class="pb-3 text-center">
+     <button type="submit" class="btn btn-red">Sign In</button>
+   </div>
+  </form>
+</div>
+
+</body>
+</html>
+Save to grepper
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}

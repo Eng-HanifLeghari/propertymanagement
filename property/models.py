@@ -11,6 +11,8 @@ class User(AbstractUser):
     address = models.CharField(max_length=100, blank=True, null=True)
     phone_number = models.CharField(max_length=30, blank=True, null=True)
     title = models.CharField(max_length=100, blank=True, null=True)
+    password = models.CharField(max_length=100, blank=True, null=True)
+    password_retype = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.username
