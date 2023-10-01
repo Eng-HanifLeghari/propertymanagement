@@ -66,3 +66,24 @@ class PropertyFacility(models.Model):
     def __str__(self):
         return self.property.title
 
+    def amanities_detail(self):
+        amn = {}
+        if self.air_cond:
+            amn["Air Cond"] = True
+        if self.balcony:
+            amn["Balcony"] = True
+        if self.internet:
+            amn["Internet"] = True
+        if self.dishwasher:
+            amn["Dishwasher"] = True
+        if self.bedding:
+            amn["Bedding"] = True
+        if self.cable_tv:
+            amn["Cable TV"] = True
+        if self.parking:
+            amn["Parking"] = True
+        if self.pool:
+            amn["Pool"] = True
+        if self.fridge:
+            amn["Fridge"] = True
+        return amn

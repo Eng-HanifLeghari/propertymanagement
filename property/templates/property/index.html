@@ -139,12 +139,13 @@
 						 <div class="feature_2im clearfix">
 							 <div class="feature_2im1 clearfix">
 								 {% for image in property.property_image.all %}
-								 {%if forloop.first%}
+								 {% if forloop.first %}
+								 {% if image.image %}
 								 <a href="#"><img src="{{ image.image.url }}" class="iw" alt="abc" height="280" width="360"></a>
-							 	{%endif%}
+							 	{% endif %}
+								 {% endif %}
 								 {% endfor %}
 							 </div>
-
 							 <div class="feature_2im2 clearfix">
 								 <h6 class="mgt"><a class="bg_1" href="#">{{ property.feature }}</a></h6>
 								 <h6 class="pull-right mgt"><a class="bg_2" href="#">{{ property.for_rent_or_sale }}</a></h6>

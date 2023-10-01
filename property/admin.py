@@ -69,3 +69,14 @@ class PropertyAdmin(admin.ModelAdmin):
             queryset = queryset.filter(user=request.user)
 
         return queryset, use_distinct
+
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "user":  # Replace "user" with the actual name of your ForeignKey field
+            if request.user.is_superuser:
+                # Superadmins can see all users
+                kwargs["queryset"] = User.objects.all()
+            else:
+                # Staff users can only see themselves
+                kwargs["queryset"] = User.objects.filter(id=request.user.id)
+        # return super().formfield_for
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)

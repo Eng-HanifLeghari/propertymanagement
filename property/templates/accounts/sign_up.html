@@ -3,87 +3,69 @@
 {% block title %} Login {% endblock title %}
 
 <!-- Specific Page CSS goes HERE  -->
-{% block stylesheets %}{% endblock stylesheets %}
+
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'property/css/sign_up.css' %}">
+{% endblock stylesheets %}
 
 {% block content %}
-<html>
-<head>
-<style>
-  /* Center the form horizontally and vertically */
-  .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 130vh; /* 100% of the viewport height */
-  }
-
-  /* Style for the form */
-  .my-form {
-    background: DodgerBlue;
-    padding: 150px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  }
-</style>
-</head>
-<body>
-<div class="center">
-  <form class="my-form" method="POST" action="">
-     {% csrf_token %}
-         {% if messages %}
-        <div class="alert alert-info">
+<div class="container-fluid center">
+        <form class="my-form" method="POST" action="{% url 'login_view' %}">
+            {% csrf_token %}
+            {% if messages %}
+            <div class="alert alert-info">
                 <ul class="messages">
                     {% for message in messages %}
-                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
                     {% endfor %}
                 </ul>
-        </div>
-{% endif %}
-      <h3 class="blue-text bold">Sign Up</h3><br><br><br>
-    <!-- Your form fields go here -->
-    <div class="form-group">
-        <label for="username">User Name:</label>
-        <input type="text" placeholder="username" class="form-control validate" id="username" name="username" required>
-      </div>
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" placeholder="Email" class="form-control validate" id="email" name="email" required><br>
-      </div>
-   <div class="form-group">
-        <label for="number">Phone Number:</label>
-        <input type="number" placeholder="Phone Number" class="form-control validate" id="number" name="number" required><br>
-   </div>
-    <div class="form-group">
-        <label for="address">Address:</label>
-        <input type="text" placeholder="Address" class="form-control validate" id="address" name="address" required><br>
-      </div>
-    <div class="form-group">
-        <label for="title">Title:</label>
-        <input type="text" placeholder="Title" class="form-control validate" id="title" name="title" required><br>
-      </div>
-    <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" placeholder="Password" class="form-control validate" id="password" name="password" required><br>
-      </div>
-     <div class="form-group">
-        <label for="password_retype">Password_Retype:</label>
-        <input type="password" placeholder="password_retype" class="form-control validate" id="password_retype" name="password_retype" required><br>
-      </div>
-    <div class="form-group">
-        <label for="image">Select an image:</label>
-        <input type="file" id="image" class="form-control-file" name="image" required><br>
-      </div>
-   <div class="pb-3 text-center">
-     <button type="submit" class="btn btn-red" value="Submit">Sign Up</button>
-   </div>
-  </form>
-</div>
+            </div>
+            {% endif %}
+            <h3 class="blue-text center">Sign Up</h3><br><br>
+            <!-- Your form fields go here -->
+            <div class="form-group">
+                <label for="username">User Name:</label>
+                <input type="text" placeholder="UserName" class="form-control validate" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Email" class="form-control validate" id="email" name="email" required><br>
+            </div>
+            <div class="form-group">
+                <label for="number">Phone Number:</label>
+                <input type="number" placeholder="Phone Number" class="form-control validate" id="number" name="number" required><br>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="address" placeholder="Address" class="form-control validate" id="address" name="address" required><br>
+            </div>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="title" placeholder="title" class="form-control validate" id="title" name="title" required><br>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" placeholder="Password" class="form-control validate" id="password" name="password" required><br>
+            </div>
+             <div class="form-group">
+                <label for="retype_password">Retype Password:</label>
+                <input type="retype_password" placeholder="Retype_Password" class="form-control validate" id="retype_password" name="retype_password" required><br>
+            </div>
+            <div class="form-group">
+                <label for="file">Image:</label>
+                <input type="file" placeholder="image" class="form-control validate" id="file" name="image" required><br>
+            </div>
+            <!-- Add the rest of your form fields here -->
+            <span>
+            <div class="pb-3 text-center">
+                <button type="submit" class="btn btn-red" value="Submit">Sign Up</button>
 
-</body>
-</html>
-Save to grepper
+                <button type="submit" class="btn btn-red" value="Submit">Sign In</button>
+            </div>
+                </span>
+        </form>
+    </div><br>
 
 {% endblock content %}
-
-<!-- Specific JS goes HERE -->
-{% block javascripts %}{% endblock javascripts %}
