@@ -33,7 +33,7 @@ class PropertyImageInline(admin.TabularInline):  # You can use `admin.StackedInl
     model = PropertyImage
     display = ['description']
     extra = 0
-    max_num = 1
+    max_num = 20
 
 
 class PropertyFacilityInline(admin.TabularInline):  # You can use `admin.StackedInline` for a different display style
