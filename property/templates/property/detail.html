@@ -185,47 +185,67 @@
 	    <div class="center_detail_1ri1 mgt clearfix">
 		 <h4 class="mgt"><i class="fa fa-calendar col_1"></i> Schedule a Tour</h4>
 		 <hr>
-		 <div class="center_detail_1ri1i clearfix">
-		  <div class="col-sm-6 space_left">
-		   <input id="cal_3" placeholder="10/16/2020" class="form-control" type="text">
-		  </div>
-		  <div class="col-sm-6 space_left">
-		   <input placeholder="12:13 am" class="form-control" type="text">
-		  </div>
-		 </div>
-		 <div class="center_detail_1ri1i1 clearfix">
-		  <div class="col-sm-6 space_left">
-		   <h5>Adult</h5>
-		   <div class="input-group number-spinner">
-				<span class="input-group-btn">
-					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
-				</span>
-				<input type="text" class="form-control mgt text-center" value="1">
-				<span class="input-group-btn">
-					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
-				</span>
-	       </div>
-		  </div>
-		  <div class="col-sm-6 space_left">
-		   <h5>Children</h5>
-		   <div class="input-group number-spinner">
-				<span class="input-group-btn">
-					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
-				</span>
-				<input type="text" class="form-control mgt text-center" value="1">
-				<span class="input-group-btn">
-					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
-				</span>
-	       </div>
-		  </div>
-		 </div><br>
-		 <h5 class="text-center mgt"><a class="button block" href="#">Submit Request</a></h5>
+<!--		 <div class="center_detail_1ri1i clearfix">-->
+<!--		  <div class="col-sm-6 space_left">-->
+<!--		   <input id="cal_3" placeholder="10/16/2020" class="form-control" type="text">-->
+<!--		  </div>-->
+<!--		  <div class="col-sm-6 space_left">-->
+<!--		   <input placeholder="12:13 am" class="form-control" type="text">-->
+<!--		  </div>-->
+<!--		 </div>-->
+<!--		 <div class="center_detail_1ri1i1 clearfix">-->
+<!--		  <div class="col-sm-6 space_left">-->
+<!--		   <h5>Adult</h5>-->
+<!--		   <div class="input-group number-spinner">-->
+<!--				<span class="input-group-btn">-->
+<!--					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>-->
+<!--				</span>-->
+<!--				<input type="text" class="form-control mgt text-center" value="1">-->
+<!--				<span class="input-group-btn">-->
+<!--					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>-->
+<!--				</span>-->
+<!--	       </div>-->
+<!--		  </div>-->
+<!--		  <div class="col-sm-6 space_left">-->
+<!--		   <h5>Children</h5>-->
+<!--		   <div class="input-group number-spinner">-->
+<!--				<span class="input-group-btn">-->
+<!--					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>-->
+<!--				</span>-->
+<!--				<input type="text" class="form-control mgt text-center" value="1">-->
+<!--				<span class="input-group-btn">-->
+<!--					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>-->
+<!--				</span>-->
+<!--	       </div>-->
+<!--		  </div>-->
+<!--		 </div><br>-->
+<!--			<div class="calendly-widget">-->
+<!--			<div class="calendly-inline-widget" data-url="https://calendly.com/your-username/event-type" style="min-width:320px;height:580px;"></div>-->
+<!--			<script type="text/javascript" src="https://calendly.com//assets/external/widget.js"></script>-->
+
+<!--    &lt;!&ndash; Adding a JavaScript function to handle button click &ndash;&gt;-->
+<!--			<script>-->
+<!--				function handleRequestSubmission() {-->
+<!--					// Perform your desired action here-->
+<!--					alert("Request submitted!"); // Example: Display an alert-->
+<!--				}-->
+<!--			</script>-->
+
+    <h5 class="text-center mgt">
+        <!-- Call the JavaScript function on button click -->
+        <a class="button block" href="https://calendly.com/" onclick="handleRequestSubmission();">Schedule a Tour Meeting</a>
+    </h5>
+</div>
 		</div>
 		<div class="center_detail_1ri1 clearfix">
 		  <h4 class="mgt"> User Information</h4>
 		  <hr>
 		  <div class="center_detail_1ri1i1 clearfix">
-		    <img class="img-circle" src='{{ user_agents.image.url }}' alt="abc">
+			  {% if user_agents.image %}
+		    <img src="{{user_agents.image.url}}" class="img-circle" alt="abc">
+			  {% else %}
+    		<img src="{% static 'property/img/30.jpg' %}" alt="Default Image">
+			  {% endif %}
 			<h5 class="bold mgt">{{user_agents.username}}</h5>
 			<h6>{{user_agents.title}}</h6>
 		  </div>

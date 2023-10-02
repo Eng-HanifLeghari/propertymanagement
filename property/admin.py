@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Property, PropertyImage, PropertyFacility, User, Slider
+from .models import Property, PropertyImage, PropertyFacility, User, Slider, Event
 from django.contrib.auth.admin import UserAdmin
 
 
@@ -25,7 +25,7 @@ class CustomUserAdmin(admin.ModelAdmin):
 
 
 admin.site.register(PropertyFacility)
-# admin.site.register(User)
+admin.site.register(Event)
 admin.site.register(Slider)
 
 
@@ -80,3 +80,5 @@ class PropertyAdmin(admin.ModelAdmin):
                 kwargs["queryset"] = User.objects.filter(id=request.user.id)
         # return super().formfield_for
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
+
+

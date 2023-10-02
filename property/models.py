@@ -87,3 +87,14 @@ class PropertyFacility(models.Model):
         if self.fridge:
             amn["Fridge"] = True
         return amn
+
+
+class Event(models.Model):
+    event_date = models.DateField()
+    event_name = models.CharField(max_length=200)
+    event_time = models.TimeField()
+    num_visitors = models.IntegerField()
+    property_title = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.property_title

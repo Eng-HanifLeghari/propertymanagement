@@ -1,5 +1,6 @@
 from django import forms
 from .models import User, Property
+from schedule.models import Event
 
 
 class UserForm(forms.Form):
@@ -25,3 +26,9 @@ class PropertyAdminForm(forms.ModelForm):
         super(PropertyAdminForm, self).__init__(*args, **kwargs)
         if user:
             self.fields['user'].queryset = self.fields['user'].queryset.filter(pk=user.pk)
+
+
+class EventForm(forms.ModelForm):
+    class Meta:
+        model = Event  # Use your model if applicable
+        fields = ['event_date', 'event_name', 'event_time', 'num_visitors', 'property_title']
