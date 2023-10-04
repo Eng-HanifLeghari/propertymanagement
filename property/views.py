@@ -54,3 +54,9 @@ def contact_us(request):
 
 def about_us(request):
     return render(request, 'property/about.html')
+
+
+def my_view(request):
+    # Replace 'YOUR_ACTUAL_CALENDLY_LINK' with your Calendly link
+    calendly_link = 'https://calendly.com/your-username'
+    return render(request, 'property/detail.html', {'calendly_link': calendly_link})

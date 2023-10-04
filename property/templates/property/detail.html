@@ -97,47 +97,6 @@
 		   <h6><span class="bold">Year Built:</span> {{ get_data_by_user.year_built }}</h6>
 		  </div>
 		 </div><br><br>
-
-<!--	   <div class="center_detail_1li1 clearfix">-->
-<!--        <h4 class="mgt head_1">Location</h4><br><br><br>-->
-<!--		   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARR540nFWPIz8AzGQ8QIanr5Yu2_li8-k&libraries=places&callback=initMap" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen="" async defer></script>-->
-<!--        </script>-->
-<!--    <script>-->
-<!--        var map;-->
-
-<!--        function initMap() {-->
-<!--            var mapOptions = {-->
-<!--                center: { lat: 33.59839, lng: 73.04414 }, // Initial map center coordinates-->
-<!--                zoom: 12, // Initial zoom level-->
-<!--            };-->
-
-<!--            map = new google.maps.Map(document.getElementById('map'), mapOptions);-->
-
-<!--            // Try to get the user's geolocation-->
-
-<!--&lt;!&ndash;            if (navigator.geolocation) {&ndash;&gt;-->
-<!--&lt;!&ndash;            navigator.geolocation.getCurrentPosition(function(position) {&ndash;&gt;-->
-<!--&lt;!&ndash;                var userLatLng = {&ndash;&gt;-->
-<!--&lt;!&ndash;                    lat: position.coords.latitude,&ndash;&gt;-->
-<!--&lt;!&ndash;                    lng: position.coords.longitude&ndash;&gt;-->
-<!--&lt;!&ndash;                };&ndash;&gt;-->
-
-<!--&lt;!&ndash;                // Center the map at the user's location&ndash;&gt;-->
-<!--&lt;!&ndash;                map.setCenter(userLatLng);&ndash;&gt;-->
-
-<!--&lt;!&ndash;                // You can add a marker at the user's location if needed&ndash;&gt;-->
-<!--&lt;!&ndash;                var userMarker = new google.maps.Marker({&ndash;&gt;-->
-<!--&lt;!&ndash;                    position: userLatLng,&ndash;&gt;-->
-<!--&lt;!&ndash;                    map: map,&ndash;&gt;-->
-<!--&lt;!&ndash;                    title: 'Your Location'&ndash;&gt;-->
-<!--&lt;!&ndash;                });&ndash;&gt;-->
-<!--&lt;!&ndash;            });&ndash;&gt;-->
-
-<!--            // You can add markers, polygons, or other map features here-->
-<!--        }-->
-<!--    </script>-->
-<!--    <div id="map" style="height: 400px;"></div>-->
-<!--	   </div><br><br>-->
 		 <h4 class="mgt head_1">Amenities</h4>
 		<div class="center_detail_1li2i clearfix">
 			{% for key, value in amenities.items %}
@@ -145,37 +104,6 @@
 				<h5><i class="fa fa-check-square col_1"></i> {{key}}</h5>
 		  </div>
 			{% endfor %}
-<!--		  <div class="col-sm-4 space_left">-->
-<!--			<h5><i class="fa fa-check-square-o col_1" aria-hidden="true"></i> Air Cond: {{ value.air_cond }}</h5>-->
-<!--		  </div>-->
-<!--		  <div class="col-sm-4 space_left">-->
-<!--			<h5><i class="fa fa-check-square-o col_1" aria-hidden="true"></i> Balcony: {{ value.balcony }}</h5>-->
-<!--		  </div>-->
-<!--		  <div class="col-sm-4 space_left">-->
-<!--			<h5><i class="fa fa-check-square-o col_1" aria-hidden="true"></i> Internet: {{ value.internet }}</h5>-->
-<!--		  </div>-->
-<!--		</div>-->
-<!--		<div class="center_detail_1li2i clearfix">-->
-<!--		  <div class="col-sm-4 space_left">-->
-<!--			<h5><i class="fa fa-check-square-o col_1" aria-hidden="true"></i> Dishwasher: {{ value.dishwasher }}</h5>-->
-<!--		  </div>-->
-<!--		  <div class="col-sm-4 space_left">-->
-<!--			<h5><i class="fa fa-check-square-o col_1" aria-hidden="true"></i> Bedding: {{ value.bedding }}</h5>-->
-<!--		  </div>-->
-<!--		  <div class="col-sm-4 space_left">-->
-<!--			<h5><i class="fa fa-check-square-o col_1" aria-hidden="true"></i> Cable TV: {{ value.cable_tv }}</h5>-->
-<!--		  </div>-->
-<!--		</div>-->
-<!--		<div class="center_detail_1li2i clearfix">-->
-<!--		  <div class="col-sm-4 space_left">-->
-<!--			<h5><i class="fa fa-check-square-o col_1" aria-hidden="true"></i> Parking: {{ value.parking }}</h5>-->
-<!--		  </div>-->
-<!--		  <div class="col-sm-4 space_left">-->
-<!--			<h5><i class="fa fa-check-square-o col_1" aria-hidden="true"></i> Pool: {{ value.pool }}</h5>-->
-<!--		  </div>-->
-<!--		  <div class="col-sm-4 space_left">-->
-<!--			<h5><i class="fa fa-check-square-o col_1" aria-hidden="true"></i> Fridge: {{ value.fridge }}</h5>-->
-<!--		  </div>-->
 		</div>
 	 </div>
 	  </div>
@@ -185,55 +113,12 @@
 	    <div class="center_detail_1ri1 mgt clearfix">
 		 <h4 class="mgt"><i class="fa fa-calendar col_1"></i> Schedule a Tour</h4>
 		 <hr>
-<!--		 <div class="center_detail_1ri1i clearfix">-->
-<!--		  <div class="col-sm-6 space_left">-->
-<!--		   <input id="cal_3" placeholder="10/16/2020" class="form-control" type="text">-->
-<!--		  </div>-->
-<!--		  <div class="col-sm-6 space_left">-->
-<!--		   <input placeholder="12:13 am" class="form-control" type="text">-->
-<!--		  </div>-->
-<!--		 </div>-->
-<!--		 <div class="center_detail_1ri1i1 clearfix">-->
-<!--		  <div class="col-sm-6 space_left">-->
-<!--		   <h5>Adult</h5>-->
-<!--		   <div class="input-group number-spinner">-->
-<!--				<span class="input-group-btn">-->
-<!--					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>-->
-<!--				</span>-->
-<!--				<input type="text" class="form-control mgt text-center" value="1">-->
-<!--				<span class="input-group-btn">-->
-<!--					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>-->
-<!--				</span>-->
-<!--	       </div>-->
-<!--		  </div>-->
-<!--		  <div class="col-sm-6 space_left">-->
-<!--		   <h5>Children</h5>-->
-<!--		   <div class="input-group number-spinner">-->
-<!--				<span class="input-group-btn">-->
-<!--					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>-->
-<!--				</span>-->
-<!--				<input type="text" class="form-control mgt text-center" value="1">-->
-<!--				<span class="input-group-btn">-->
-<!--					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>-->
-<!--				</span>-->
-<!--	       </div>-->
-<!--		  </div>-->
-<!--		 </div><br>-->
-<!--			<div class="calendly-widget">-->
-<!--			<div class="calendly-inline-widget" data-url="https://calendly.com/your-username/event-type" style="min-width:320px;height:580px;"></div>-->
-<!--			<script type="text/javascript" src="https://calendly.com//assets/external/widget.js"></script>-->
-
-<!--    &lt;!&ndash; Adding a JavaScript function to handle button click &ndash;&gt;-->
-<!--			<script>-->
-<!--				function handleRequestSubmission() {-->
-<!--					// Perform your desired action here-->
-<!--					alert("Request submitted!"); // Example: Display an alert-->
-<!--				}-->
-<!--			</script>-->
-
     <h5 class="text-center mgt">
+		<!-- Embed Calendly widget -->
+		<div class="calendly-inline-widget" data-url="https://calendly.com/{{user_agents.username}}" style="min-width:320px;height:30px;"></div>
         <!-- Call the JavaScript function on button click -->
-        <a class="button block" href="https://calendly.com/" onclick="handleRequestSubmission();">Schedule a Tour Meeting</a>
+        		<a class="button block" href="https://calendly.com/{{user_agents.username}}" onclick="handleRequestSubmission();">Schedule a Tour Meeting</a>
+
     </h5>
 </div>
 		</div>
