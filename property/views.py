@@ -40,10 +40,11 @@ def home_detail(request, id):
         user_agents = User.objects.get(id=request.user.id)
     except User.DoesNotExist:
         user_agents = None
+
     context = {
         'get_data_by_user': get_data_by_user,
         'amenities': amenities,
-        'user_agents': user_agents
+        'user_agents': user_agents,
     }
     return render(request, 'property/detail.html', context)
 
@@ -55,8 +56,3 @@ def contact_us(request):
 def about_us(request):
     return render(request, 'property/about.html')
 
-
-def my_view(request):
-    # Replace 'YOUR_ACTUAL_CALENDLY_LINK' with your Calendly link
-    calendly_link = 'https://calendly.com/your-username'
-    return render(request, 'property/detail.html', {'calendly_link': calendly_link})

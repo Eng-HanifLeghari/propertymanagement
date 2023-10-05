@@ -11,6 +11,7 @@ class User(AbstractUser):
     address = models.CharField(max_length=100, blank=True, null=True)
     phone_number = models.CharField(max_length=30, blank=True, null=True)
     title = models.CharField(max_length=100, blank=True, null=True)
+    calendly_user_name_id = models.CharField(max_length=100, blank=True, null=True)
     password = models.CharField(max_length=100, blank=True, null=True)
     password_retype = models.CharField(max_length=100, blank=True, null=True)
 
@@ -88,13 +89,3 @@ class PropertyFacility(models.Model):
             amn["Fridge"] = True
         return amn
 
-
-class Event(models.Model):
-    event_date = models.DateField()
-    event_name = models.CharField(max_length=200)
-    event_time = models.TimeField()
-    num_visitors = models.IntegerField()
-    property_title = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.property_title

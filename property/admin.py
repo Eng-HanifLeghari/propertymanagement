@@ -1,13 +1,12 @@
 from django.contrib import admin
-from .models import Property, PropertyImage, PropertyFacility, User, Slider, Event
-from django.contrib.auth.admin import UserAdmin
+from .models import Property, PropertyImage, PropertyFacility, User, Slider
 
 
 @admin.register(User)
 class CustomUserAdmin(admin.ModelAdmin):
     class Meta:
         model = User
-        list_display = ('username', 'email', 'image', 'address', 'phone_number', 'title', 'is_staff', 'is_active')
+        list_display = ('username', 'email', 'image', 'address', 'phone_number', 'calendly_user_name_id', 'title', 'is_staff', 'is_active')
         list_filter = ('is_staff', 'is_active')
         fieldsets = (
             (None, {'fields': ('email', 'password')}),
@@ -25,7 +24,6 @@ class CustomUserAdmin(admin.ModelAdmin):
 
 
 admin.site.register(PropertyFacility)
-admin.site.register(Event)
 admin.site.register(Slider)
 
 
