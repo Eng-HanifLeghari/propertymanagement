@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
-import dj_database_url
+import dj_database_url, subprocess
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-l!tk8x@b5lvmw8%+t11=i5ecry4=zd-!0)m(wzqg#n0w4+tyuz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['*', ]
 
 # Application definition
 
@@ -195,3 +195,10 @@ LOGGING = {
 
 DEBUG_PROPAGATE_EXCEPTIONS = True
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
+
+
+bashCommand = "heroku config:get DATABASE_URL -a propertymanagement" #Use your app_name
+
+output = subprocess.check_output(['bash', '-c', bashCommand]).decode("utf-8") # executing the bash command and converting byte to string
+
+DATABASES['default'] = dj_database_url.config(default=output, conn_max_age=600, ssl_require=True)
