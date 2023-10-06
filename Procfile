@@ -1,1 +1,1 @@
-web: gunicorn noamapp.wsgi --log-file -
+web: gunicorn propertymanagement.wsgi --log-file -
