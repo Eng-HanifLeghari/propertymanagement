@@ -9,7 +9,7 @@ def home(request):
     slider = Slider.objects.all()
     queryset = Property.objects.all()
     propertyimage = PropertyImage.objects.all()
-    paginator = Paginator(queryset, 3)
+    paginator = Paginator(queryset, 15)
     page = request.GET.get('page', 1)
 
     try:
