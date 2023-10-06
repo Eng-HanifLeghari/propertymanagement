@@ -1,1 +1,1 @@
-web: gunicorn propertymanagement.wsgi
+web: gunicorn propertymanagement.wsgi --log-file -

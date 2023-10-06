@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'authenticate',
     'property',
 ]
+django_heroku.settings(locals(),staticfiles=False)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -147,4 +148,3 @@ MEDIA_URL = '/media/'
 
 GOOGLE_MAPS_API_KEY = 'AIzaSyARR540nFWPIz8AzGQ8QIanr5Yu2_li8-k'
 
-django_heroku.settings(locals())
