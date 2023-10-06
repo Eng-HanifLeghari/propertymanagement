@@ -1,1 +1,1 @@
-web: gunicorn dotlinkpk.wsgi
+web: gunicorn propertymanagement.wsgi
