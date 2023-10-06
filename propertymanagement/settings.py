@@ -153,8 +153,7 @@ MEDIA_URL = '/media/'
 
 GOOGLE_MAPS_API_KEY = 'AIzaSyARR540nFWPIz8AzGQ8QIanr5Yu2_li8-k'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
