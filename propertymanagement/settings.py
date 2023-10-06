@@ -150,6 +150,8 @@ STATICFILES_DIRS = [
     # Add more directories if needed
 ]
 
+AUTH_USER_MODEL = "property.User"
+
 
 django_heroku.settings(locals())
 
