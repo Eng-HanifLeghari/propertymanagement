@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-l!tk8x@b5lvmw8%+t11=i5ecry4=zd-!0)m(wzqg#n0w4+tyuz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*',]
 
 # Application definition
 
@@ -97,7 +97,7 @@ DATABASES = {
     }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=500)
+db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
 # Password validation
