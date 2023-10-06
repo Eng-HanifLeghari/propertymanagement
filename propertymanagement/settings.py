@@ -202,3 +202,7 @@ bashCommand = "heroku config:get DATABASE_URL -a propertymanagement" #Use your a
 output = subprocess.check_output(['bash', '-c', bashCommand]).decode("utf-8") # executing the bash command and converting byte to string
 
 DATABASES['default'] = dj_database_url.config(default=output, conn_max_age=600, ssl_require=True)
+
+import logging
+logger = logging.getLogger('testlogger')
+logger.info('This is a simple log message')
