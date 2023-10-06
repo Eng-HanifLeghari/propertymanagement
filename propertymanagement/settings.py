@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
-import dj_database_url, subprocess
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'authenticate',
     'property',
 ]
-django_heroku.settings(locals(),staticfiles=False)
+django_heroku.settings(locals())
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -89,10 +89,10 @@ WSGI_APPLICATION = 'propertymanagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'propertymanagement',
-        'USER': 'property',
-        'PASSWORD': 'property123',
-        'HOST': 'localhost',
+        'NAME': 'd18m33jumbq32g',
+        'USER': 'bbyfaercdydmrk',
+        'PASSWORD': 'b546c5d011c2443b61f578da6a007d9af0ae852a0f63a658e0a06e0bfad221ae',
+        'HOST': 'ec2-52-3-81-13.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -132,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATICFILES_DIRS =[BASE_DIR / 'property/static',]
+STATICFILES_DIRS =[BASE_DIR / 'property/static']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
@@ -158,49 +158,3 @@ STATICFILES_FINDERS = [
 GOOGLE_MAPS_API_KEY = 'AIzaSyARR540nFWPIz8AzGQ8QIanr5Yu2_li8-k'
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' +
-                       'pathname=%(pathname)s lineno=%(lineno)s ' +
-                       'funcname=%(funcName)s %(message)s'),
-            'datefmt': '%Y-%m-%d %H:%M:%S'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        }
-    },
-    'handlers': {
-        'null': {
-            'level': 'DEBUG',
-            'class': 'logging.NullHandler',
-        },
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
-        }
-    },
-    'loggers': {
-        'testlogger': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        }
-    }
-}
-
-DEBUG_PROPAGATE_EXCEPTIONS = True
-COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
-
-
-bashCommand = "heroku config:get DATABASE_URL -a propertymanagement" #Use your app_name
-
-output = subprocess.check_output(['bash', '-c', bashCommand]).decode("utf-8") # executing the bash command and converting byte to string
-
-DATABASES['default'] = dj_database_url.config(default=output, conn_max_age=600, ssl_require=True)
-
-import logging
-logger = logging.getLogger('testlogger')
-logger.info('This is a simple log message')
