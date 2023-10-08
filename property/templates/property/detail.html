@@ -113,6 +113,7 @@
         <div class="center_detail_1ri1 mgt clearfix">
             <h4 class="mgt"><i class="fa fa-calendar col_1"></i> Schedule a Tour</h4>
             <hr>
+			{% if user_agents.calendly_user_name_id %}
             <h5 class="text-center mgt">
                     <!-- Embed Calendly widget if a Calendly link is provided -->
 					<!-- Calendly link widget begin -->
@@ -120,6 +121,15 @@
 				<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 				<a class="button block" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{user_agents.calendly_user_name_id}} '});return false;">Schedule a Tour Meeting</a>
             </h5>
+			{% else %}
+			<h5 class="text-center mgt">
+				<!-- Embed Calendly widget if a Calendly link is provided -->
+				<!-- Calendly link widget begin -->
+				<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+				<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+				<a class="button block" href="" onclick="return false;" disabled>Schedule a Tour Meeting</a>
+				</h5>
+			{% endif %}
         </div>
     </div>
 		<div class="center_detail_1ri1 clearfix">

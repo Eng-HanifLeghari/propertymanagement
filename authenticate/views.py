@@ -31,7 +31,7 @@ def sign_view(request):
 
         # Extract Calendly username if it contains "https/"
         if "https" in calendly_user_name_id:
-            calendly_user_name_id = calendly_user_name_id.split('/')[1]
+            calendly_user_name_id = calendly_user_name_id.split('/')[-1]
         else:
             calendly_user_name_id = calendly_user_name_id  # Keep the original value if it doesn't contain "https/"
 
