@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('authenticate.urls')),
     path('', include('property.urls'))
 ]
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
