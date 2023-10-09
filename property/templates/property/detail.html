@@ -136,15 +136,15 @@
 		  <h4 class="mgt"> User Information</h4>
 		  <hr>
 		  <div class="center_detail_1ri1i1 clearfix">
-			  {% if user_agents.image %}
-		    <img src="{{user_agents.image.url}}" class="img-circle" alt="abc">
+			  {% if get_data_by_user.user.image %}
+		    <img src="{{ get_data_by_user.user.image.url }}" class="img-circle" alt="abc">
 			  {% endif %}
-			<h5 class="bold mgt">{{user_agents.username}}</h5>
-			<h6>{{user_agents.title}}</h6>
+			<h5 class="bold mgt">{{get_data_by_user.user.username}}</h5>
+			<h6>{{get_data_by_user.user.title}}</h6>
 		  </div>
-		  <h6><i class="fa fa-map-marker col_1"></i> {{user_agents.address}}</h6>
-		  <h6><i class="fa fa-phone col_1"></i> {{user_agents.phone_number}}</h6>
-		  <h6><i class="fa fa-envelope col_1"></i> <a href="#">{{user_agents.email}}</a></h6><br>
+		  <h6><i class="fa fa-map-marker col_1"></i> {{get_data_by_user.user.address}}</h6>
+		  <h6><i class="fa fa-phone col_1"></i> {{ get_data_by_user.user.phone_number }}</h6>
+		  <h6><i class="fa fa-envelope col_1"></i> <a href="#">{{get_data_by_user.user.email}}</a></h6><br>
 		</div>
 	  </div>
 	   </div>
