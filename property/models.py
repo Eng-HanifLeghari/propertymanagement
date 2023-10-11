@@ -38,6 +38,9 @@ class Property(models.Model):
     property_Status = models.CharField(max_length=70, null=True, blank=True)
     rooms = models.CharField(max_length=50, null=True, blank=True)
     year_built = models.DateField(null=True, blank=True)
+    legal_information = models.CharField(max_length=200, null=True, blank=True)
+    visitation_days = models.CharField(max_length=255, null=True, blank=True)
+    links_to_legal_documents = models.FileField(upload_to="uploads/", null=True, blank=True)
 
     def __str__(self):
         return self.title

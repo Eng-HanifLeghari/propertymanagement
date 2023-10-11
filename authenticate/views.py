@@ -48,6 +48,7 @@ def sign_view(request):
             property_content_type = ContentType.objects.get_for_model(Property)
             facility_content_type = ContentType.objects.get_for_model(PropertyFacility)
             image_content_type = ContentType.objects.get_for_model(PropertyImage)
+            user_content_type = ContentType.objects.get_for_model(User)
 
             # Add permissions for Property model
             group.permissions.add(
@@ -72,6 +73,13 @@ def sign_view(request):
                 Permission.objects.get(content_type=image_content_type, codename="delete_propertyimage"),
                 # Add other PropertyImage permissions as needed
             )
+            group.permissions.add(
+                Permission.objects.get(content_type=user_content_type, codename="add_user"),
+                Permission.objects.get(content_type=user_content_type, codename="change_user"),
+                Permission.objects.get(content_type=user_content_type, codename="delete_user"),
+                # Add other User permissions as needed
+            )
+
         group.user_set.add(user)
 
         messages.success(request, "Registration successful. You can now log in.")

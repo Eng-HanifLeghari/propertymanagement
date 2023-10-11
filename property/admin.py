@@ -4,26 +4,19 @@ from .models import Property, PropertyImage, PropertyFacility, User, Slider
 
 @admin.register(User)
 class CustomUserAdmin(admin.ModelAdmin):
-    class Meta:
-        model = User
-        list_display = ('username', 'email', 'image', 'address', 'phone_number', 'calendly_user_name_id', 'title', 'is_staff', 'is_active')
-        list_filter = ('is_staff', 'is_active')
-        fieldsets = (
-            (None, {'fields': ('email', 'password')}),
-            ('Personal Info', {'fields': ('username',)}),  # Corrected 'username' field definition
-            ('Permissions', {'fields': ('is_staff', 'is_active')}),
-        )
-        add_fieldsets = (
-            (None, {
-                'classes': ('wide',),
-                'fields': ('email', 'password1', 'password2'),
-            }),
-        )
-        search_fields = ('email', 'username')
-        ordering = ('email',)
+    model = User
+
+    def queryset(self, request):
+        """
+        Filter the objects displayed in the change_list to only
+        display those for the currently signed in user.
+        """
+        qs = super(CustomUserAdmin, self).queryset(request)
+        if request.user.is_superuser:
+            return qs
+        return qs.filter(owner=request.user)
 
 
-admin.site.register(PropertyFacility)
 admin.site.register(Slider)
 
 
