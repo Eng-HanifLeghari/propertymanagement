@@ -1,0 +1,4 @@
+mainfence: needs recovery email as the captcha, not need to handle the captcha
+	jugar: once we create the email. that email will used as the recovery email.
+	
+
