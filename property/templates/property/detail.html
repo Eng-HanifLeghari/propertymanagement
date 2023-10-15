@@ -102,9 +102,11 @@
 		  <div class="col-sm-4 space_left">
 		   <h6><span class="bold">Visitation policy:</span> {{ get_data_by_user.visitation_days }}</h6>
 		  </div>
-			 <div class="col-sm-4 space_left">
-		   <h6><span class="bold">Links to legal documents:</span><a href="{{ get_data_by_user.links_to_legal_documents.url }}"></a></h6>
-		  </div>
+			 {% if get_data_by_user.links_to_legal_documents %}
+			<div class="col-sm-4 space_left">
+    			<h6><span class="bold"><a href="{{ get_data_by_user.links_to_legal_documents.url }}">Links to legal documents</a></span></h6>
+			</div>
+			 {% endif %}
 		 </div><br><br>
 		 <h4 class="mgt head_1">Amenities</h4>
 		<div class="center_detail_1li2i clearfix">
